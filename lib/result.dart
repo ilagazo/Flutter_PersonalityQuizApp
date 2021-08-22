@@ -11,9 +11,10 @@ class Result extends StatelessWidget {
     if (resultScore <= 8) {
       resultText = 'You are awesome and innocent!';
     } else if (resultScore <= 12) {
-      resultText = 'You are Pretty likeable!';
+      resultText = 'You are liked by many, especially your parents!';
     } else if (resultScore <= 16) {
-      resultText = 'You alright?';
+      resultText =
+          'You alright? We recommend you go to a therapist and get checked out....';
     } else {
       resultText = "Weclome to Slythern House you bad mamma jamma!";
     }
