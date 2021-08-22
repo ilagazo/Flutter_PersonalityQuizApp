@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
 
+import '/question.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  var questionIndex = 0;
+  @override
+  State<StatefulWidget> createState() {
+    // throw UnimplementedError();
+    return _MyAppState();
+  }
+}
 
-  void answerQuestion() {
-    questionIndex = questionIndex + 1;
-    print(questionIndex);
+// Leading Underscore is like "private". Sets the class to only be usable within the file
+// Persistent
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+    print(_questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What/s your favorite color?',
-      'What/s your favorite animal?,'
+      'What\'s your favorite color?',
+      'What\'s your favorite animal?,'
     ];
 
     return MaterialApp(
@@ -26,8 +40,8 @@ class MyApp extends StatefulWidget {
         ),
         body: Column(
           children: [
-            Text(questions[questionIndex]),
-            ElevatedButton(child: Text('Answer 1'), onPressed: answerQuestion),
+            Question(questions[_questionIndex]),
+            ElevatedButton(child: Text('Answer 1'), onPressed: _answerQuestion),
             ElevatedButton(
                 child: Text('Answer 2'),
                 onPressed: () => print('Answer 2 chosen')),
