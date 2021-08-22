@@ -1,6 +1,6 @@
-# flutter_course1
+# Personality Quiz App
 
-A new Flutter project.
+This is one of my first flutter apps built that is a personality quiz.
 
 ## Getting Started
 
